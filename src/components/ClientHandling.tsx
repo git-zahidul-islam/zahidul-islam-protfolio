@@ -18,11 +18,11 @@ export function ClientHandling() {
         </div>
       </Reveal>
 
-      <div className="mt-10 grid gap-4 sm:grid-cols-2">
+      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {clientWork.items.map((item, i) => {
           const Icon = icons[i % icons.length];
           return (
-            <Reveal key={item.title} delay={i * 0.05}>
+            <Reveal key={item.title} delay={i * 0.05} className="h-full">
               <div className="h-full rounded-2xl border border-line bg-surface p-5">
                 <Icon className="size-5 text-accent" />
                 <h3 className="mt-3 font-medium">{item.title}</h3>

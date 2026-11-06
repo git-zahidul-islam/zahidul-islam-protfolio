@@ -4,10 +4,14 @@ import { motion } from "framer-motion";
 import { ArrowRight, MapPin } from "lucide-react";
 import { profile } from "@/data/profile";
 import { GithubIcon, LinkedinIcon } from "./icons";
+import { HeroHighlights } from "./HeroHighlights";
 
 export function Hero() {
   return (
-    <section id="top" className="flex min-h-[calc(100svh-4rem)] flex-col justify-center py-20">
+    <section
+      id="top"
+      className="grid items-center gap-12 py-16 sm:py-20 lg:min-h-[calc(100svh-4rem)] lg:grid-cols-[1.15fr_1fr] lg:gap-14"
+    >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -21,13 +25,13 @@ export function Hero() {
           Open to new opportunities
         </p>
 
-        <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-6xl">
+        <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-6xl lg:text-5xl xl:text-6xl">
           Hi, I&apos;m{" "}
           <span className="bg-gradient-to-r from-fg via-fg to-accent bg-clip-text text-transparent">
             {profile.name}.
           </span>
         </h1>
-        <p className="mt-3 text-2xl font-medium tracking-tight text-muted sm:text-4xl">
+        <p className="mt-3 text-2xl font-medium tracking-tight text-muted sm:text-4xl lg:text-3xl xl:text-4xl">
           {profile.role}
         </p>
         <p className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
@@ -74,6 +78,8 @@ export function Hero() {
           </div>
         </div>
       </motion.div>
+
+      <HeroHighlights />
     </section>
   );
 }

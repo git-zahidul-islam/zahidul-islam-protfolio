@@ -24,7 +24,7 @@ export function Experience() {
                 {job.highlight}
               </p>
 
-              <ul className="mt-5 space-y-2.5">
+              <ul className="mt-5 max-w-3xl space-y-2.5">
                 {job.points.map((point) => (
                   <li key={point} className="flex gap-3 text-sm leading-relaxed text-muted sm:text-base">
                     <span className="mt-2.5 size-1 shrink-0 rounded-full bg-subtle" />

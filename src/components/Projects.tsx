@@ -70,9 +70,9 @@ function ProjectCard({ project }: { project: Project }) {
 export function Projects() {
   return (
     <Section id="projects" label="Projects" title="Selected work">
-      <div className="grid gap-5">
+      <div className="grid gap-5 lg:grid-cols-3">
         {projects.map((project, i) => (
-          <Reveal key={project.title} delay={i * 0.05}>
+          <Reveal key={project.title} delay={i * 0.05} className="h-full">
             <ProjectCard project={project} />
           </Reveal>
         ))}

@@ -10,7 +10,7 @@ export function Navbar() {
 
   return (
     <header className="relative z-40">
-      <nav className="mx-auto flex h-16 max-w-4xl items-center justify-between px-5 sm:px-8">
+      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
         <a href="#top" className="font-semibold tracking-tight">
           {profile.name.split(" ")[0]}
           <span className="text-accent">.</span>
