@@ -22,7 +22,10 @@ export function Hero() {
         </p>
 
         <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-6xl">
-          Hi, I&apos;m {profile.name}.
+          Hi, I&apos;m{" "}
+          <span className="bg-gradient-to-r from-fg via-fg to-accent bg-clip-text text-transparent">
+            {profile.name}.
+          </span>
         </h1>
         <p className="mt-3 text-2xl font-medium tracking-tight text-muted sm:text-4xl">
           {profile.role}

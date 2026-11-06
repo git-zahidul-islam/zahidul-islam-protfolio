@@ -20,7 +20,7 @@ export const profile = {
 export const stats = [
   { value: "50+", label: "Clients handled" },
   { value: "2", label: "Client projects delivered" },
-  { value: "1+", label: "Years of experience" },
+  { value: "2+", label: "Years of experience" },
 ];
 
 export const experience = [
