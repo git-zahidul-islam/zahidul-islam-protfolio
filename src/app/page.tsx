@@ -7,6 +7,7 @@ import { Projects } from "@/components/Projects";
 import { NowBuilding } from "@/components/NowBuilding";
 import { Skills } from "@/components/Skills";
 import { Education } from "@/components/Education";
+import { Videos } from "@/components/Videos";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
@@ -24,6 +25,7 @@ export default function Home() {
         <NowBuilding />
         <Skills />
         <Education />
+        <Videos />
         <Contact />
       </main>
       <Footer />

@@ -35,6 +35,8 @@ soft gradient styling and a floating WhatsApp chat widget for instant contact.
 ## Features
 
 - **Hero with highlight cards** — current role, 50+ clients, 2+ years, projects and the mobile app in progress, each linking to its section
+- **Videos & updates** — latest YouTube uploads load automatically from the channel's RSS feed (newest first, refreshed hourly, play inline), next to the Facebook page timeline
+- **Social links everywhere** — GitHub, LinkedIn, YouTube, Facebook, Instagram and X in the hero, mobile menu, contact section and footer
 - **Floating WhatsApp widget** — visitors pick a quick message or write their own, and it opens straight in WhatsApp; they can send as many messages as they like
 - **Light / dark theme** — follows the system setting, with a manual toggle
 - **Full-screen mobile menu** — animated overlay with scroll lock, Escape-to-close and smooth scroll to sections
@@ -54,6 +56,7 @@ soft gradient styling and a floating WhatsApp chat widget for instant contact.
 | Currently building | Cross-platform mobile app with React Native + Expo |
 | Skills | Frontend, backend, database, mobile, tools |
 | Education | BBA in Accounting, National University · Languages |
+| Videos & updates | Latest YouTube videos + Facebook page timeline |
 | Contact | Email, phone, WhatsApp |
 
 ## Tech stack
@@ -92,7 +95,9 @@ npm run dev        # http://localhost:3000
 All content lives in **[`src/data/profile.ts`](src/data/profile.ts)** — name, intro, stats, experience,
 client work, projects, skills, education and nav links.
 
-- **Links:** replace the `"#"` placeholders for GitHub, LinkedIn and the project Client / Server / Live links.
+- **Social links:** `profile.socials` — add, remove or change a link and it updates everywhere.
+- **Project links:** replace the `"#"` placeholders for the project Client / Server / Live links.
+- **YouTube channel:** `profile.youtubeChannelId` — the latest uploads are fetched from its RSS feed (no API key needed).
 - **WhatsApp number:** `profile.whatsapp` — international format without `+` (e.g. `8801915215719`).
 - **Projects:** each project has a `type` — `personal`, `client` or `confidential`. Confidential projects show a lock badge and a note instead of links.
 - **Colors / gradient:** design tokens are in [`src/app/globals.css`](src/app/globals.css). Adjust `--glow-1/2/3` to make the background gradient lighter or stronger.
@@ -103,6 +108,7 @@ client work, projects, skills, education and nav links.
 src/
 ├── app/
 │   ├── globals.css        # Design tokens (light/dark), gradient background
+│   ├── icon.svg           # Favicon (apple-icon.png for iOS)
 │   ├── layout.tsx         # Fonts, metadata, theme provider
 │   └── page.tsx           # Section order
 ├── components/
@@ -110,18 +116,21 @@ src/
 │   ├── HeroHighlights.tsx
 │   ├── Navbar.tsx         # Desktop links + full-screen mobile menu
 │   ├── WhatsAppWidget.tsx # Floating chat button and message panel
+│   ├── Videos.tsx         # YouTube grid + Facebook timeline (YouTubeCard, FacebookFeed)
+│   ├── SocialLinks.tsx    # Social icon row used across the site
 │   ├── About.tsx · Experience.tsx · ClientHandling.tsx · Projects.tsx
 │   ├── NowBuilding.tsx · Skills.tsx · Education.tsx · Contact.tsx · Footer.tsx
 │   └── Section.tsx        # Section heading, Reveal animation, Tag
 ├── data/
 │   └── profile.ts         # All portfolio content
 └── lib/
-    └── whatsapp.ts        # wa.me link builder + open-widget event
+    ├── whatsapp.ts        # wa.me link builder + open-widget event
+    └── youtube.ts         # Fetches latest videos from the channel RSS feed
 ```
 
 ## Deployment
 
-The site is fully static, so it can be hosted anywhere. The easiest option is **[Vercel](https://vercel.com/new)**:
+The page is statically generated and re-generated hourly (for new YouTube videos), so it works best on a Next.js host. The easiest option is **[Vercel](https://vercel.com/new)**:
 push the repository to GitHub, import it on Vercel and deploy — no configuration needed.
 
 ## Contact
