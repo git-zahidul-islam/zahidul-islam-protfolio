@@ -1,4 +1,5 @@
 import { profile } from "@/data/profile";
+import { SocialLinks } from "./SocialLinks";
 
 export function Footer() {
   return (
@@ -7,7 +8,11 @@ export function Footer() {
         <p>
           © {new Date().getFullYear()} {profile.name}
         </p>
-        <p>Built with Next.js & Tailwind CSS</p>
+        <SocialLinks
+          className="-ml-2 gap-0.5 sm:ml-0"
+          linkClassName="grid size-8 place-items-center rounded-full text-subtle transition-colors hover:text-fg"
+          iconClassName="size-4"
+        />
       </div>
     </footer>
   );

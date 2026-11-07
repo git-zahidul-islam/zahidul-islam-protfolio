@@ -4,6 +4,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { profile } from "@/data/profile";
 import { openWhatsAppWidget } from "@/lib/whatsapp";
 import { WhatsAppIcon } from "./icons";
+import { SocialLinks } from "./SocialLinks";
 import { Reveal, Section } from "./Section";
 
 export function Contact() {
@@ -53,6 +54,12 @@ export function Contact() {
             </li>
           ))}
         </ul>
+
+        <p className="mt-10 text-sm font-medium text-subtle">Find me online</p>
+        <SocialLinks
+          className="mt-3 gap-2"
+          linkClassName="grid size-11 place-items-center rounded-full border border-line bg-surface text-muted transition-colors hover:border-accent/50 hover:text-accent"
+        />
       </Reveal>
     </Section>
   );

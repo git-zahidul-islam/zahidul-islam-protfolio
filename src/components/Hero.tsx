@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin } from "lucide-react";
 import { profile } from "@/data/profile";
-import { GithubIcon, LinkedinIcon } from "./icons";
 import { HeroHighlights } from "./HeroHighlights";
+import { SocialLinks } from "./SocialLinks";
 
 export function Hero() {
   return (
@@ -56,27 +56,9 @@ export function Hero() {
           >
             Get in touch
           </a>
-          <div className="ml-1 flex items-center gap-1">
-            <a
-              href={profile.socials.github}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
-              className="grid size-10 place-items-center rounded-full text-muted transition-colors hover:text-fg"
-            >
-              <GithubIcon className="size-5" />
-            </a>
-            <a
-              href={profile.socials.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-              className="grid size-10 place-items-center rounded-full text-muted transition-colors hover:text-fg"
-            >
-              <LinkedinIcon className="size-5" />
-            </a>
-          </div>
         </div>
+
+        <SocialLinks className="mt-6 -ml-2.5 gap-0.5" />
       </motion.div>
 
       <HeroHighlights />

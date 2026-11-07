@@ -1,4 +1,4 @@
-// All portfolio content lives here. Replace "#" links with real URLs when available.
+// All portfolio content lives here.
 
 export const profile = {
   name: "Zahidul Islam",
@@ -12,9 +12,26 @@ export const profile = {
   summary:
     "Motivated MERN Stack Developer with strong skills in Next.js, React, Node.js, Express, MongoDB and PostgreSQL. Experienced in building responsive, user-friendly interfaces with Tailwind CSS and managing state with Redux. Capable of developing clean REST APIs and integrating smooth frontend–backend workflows. Always eager to learn new technologies and contribute to modern, scalable web applications.",
   socials: {
-    github: "#",
-    linkedin: "#",
+    github: "https://github.com/git-zahidul-islam",
+    linkedin: "https://www.linkedin.com/in/zahidul-islam-dev/",
+    youtube: "https://www.youtube.com/@Zahidul-Islam-dev",
+    facebook: "https://www.facebook.com/Zahidulislampro12",
+    instagram: "https://www.instagram.com/zahidislam.dev/",
+    x: "https://x.com/ZahidulIslamDev",
   },
+  // Used to load the latest uploads automatically (YouTube RSS feed).
+  youtubeChannelId: "UCa9Mg6xYhrjA7RqJGSnbz9A",
+};
+
+export type SocialKey = keyof typeof profile.socials;
+
+export const socialLabels: Record<SocialKey, string> = {
+  github: "GitHub",
+  linkedin: "LinkedIn",
+  youtube: "YouTube",
+  facebook: "Facebook",
+  instagram: "Instagram",
+  x: "X (Twitter)",
 };
 
 export const stats = [
@@ -145,7 +162,7 @@ export const skills = [
     items: ["HTML5", "CSS3", "JavaScript", "TypeScript", "React.js", "Next.js", "Tailwind CSS", "Redux"],
   },
   { group: "Backend", items: ["Node.js", "Express.js", "Mongoose", "Zod", "Prisma"] },
-  { group: "Database", items: ["PostgreSQL", "MySQL", "MongoDB"] },
+  { group: "Database", items: ["MongoDB", "PostgreSQL"] },
   { group: "Mobile", items: ["React Native", "Expo"] },
   { group: "Other", items: ["Firebase", "JWT"] },
   { group: "Tools", items: ["Git", "GitHub", "Postman"] },

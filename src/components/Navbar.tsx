@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Mail, Menu, X } from "lucide-react";
 import { navLinks, profile } from "@/data/profile";
-import { GithubIcon, LinkedinIcon } from "./icons";
+import { SocialLinks } from "./SocialLinks";
 import { ThemeToggle } from "./ThemeToggle";
 
 function Logo({ onClick }: { onClick?: () => void }) {
@@ -135,20 +135,16 @@ export function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, transition: { delay: 0.4 } }}
               exit={{ opacity: 0, transition: { duration: 0.1 } }}
-              className="flex items-center justify-between border-t border-line px-8 py-6 text-sm text-muted"
+              className="space-y-4 border-t border-line px-8 py-6 text-sm text-muted"
             >
               <a href={`mailto:${profile.email}`} className="inline-flex min-w-0 items-center gap-2 hover:text-fg">
                 <Mail className="size-4 shrink-0" />
                 <span className="truncate">{profile.email}</span>
               </a>
-              <div className="flex items-center gap-3">
-                <a href={profile.socials.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="hover:text-fg">
-                  <GithubIcon className="size-5" />
-                </a>
-                <a href={profile.socials.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-fg">
-                  <LinkedinIcon className="size-5" />
-                </a>
-              </div>
+              <SocialLinks
+                className="-ml-2 gap-1"
+                linkClassName="grid size-9 place-items-center rounded-full transition-colors hover:text-fg"
+              />
             </motion.div>
           </motion.div>
         )}
