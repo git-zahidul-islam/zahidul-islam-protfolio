@@ -179,11 +179,14 @@ export const languages = [
   { name: "English", level: "Comfortable" },
 ];
 
+// Set to true to show the "Videos & updates" section (and its nav link) again.
+export const showVideos = false;
+
 export const navLinks = [
   { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
   { href: "#skills", label: "Skills" },
-  { href: "#videos", label: "Videos" },
+  ...(showVideos ? [{ href: "#videos", label: "Videos" }] : []),
   { href: "#contact", label: "Contact" },
 ];

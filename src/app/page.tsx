@@ -11,6 +11,7 @@ import { Videos } from "@/components/Videos";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
+import { showVideos } from "@/data/profile";
 
 export default function Home() {
   return (
@@ -25,7 +26,7 @@ export default function Home() {
         <NowBuilding />
         <Skills />
         <Education />
-        <Videos />
+        {showVideos && <Videos />}
         <Contact />
       </main>
       <Footer />
